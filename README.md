@@ -8,11 +8,11 @@ Prior to this github repository, a patched version of JODConverter (source and j
 as com.artofsolving:jodconverter:2.1.0-alfresco-patched.
 
 ### Building and testing
-The project can be built by running Maven command:
+The core project can be built by running Maven command:
 ~~~
+cd jodconverter-core
 mvn clean install -DskipTests
 ~~~
-The tests require $officehome to be set to the location of LibreOffice or OpenOffice.org.
 
 ### Artifacts
 The artifacts can be obtained by:

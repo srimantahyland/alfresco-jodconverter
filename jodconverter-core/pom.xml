@@ -4,8 +4,8 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.artofsolving.jodconverter</groupId>
-  <artifactId>jodconverter-core</artifactId>
+  <groupId>org.alfresco</groupId>
+  <artifactId>alfresco-jodconverter-core</artifactId>
   <version>3.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -13,17 +13,25 @@
   <description>
     JODConverter converts office documents using OpenOffice.org
   </description>
-  <url>http://jodconverter.googlecode.com</url>
-  <licenses>
-    <license>
-      <name>GNU Lesser General Public License, Version 3 or later</name>
-      <url>http://www.gnu.org/licenses/lgpl.html</url>
-    </license>
-  </licenses>
+  
   <scm>
-    <url>http://jodconverter.googlecode.com/svn/trunk/jodconverter-core</url>
-    <connection>scm:svn:https://jodconverter.googlecode.com/svn/trunk/jodconverter-core/</connection>
+    <connection>scm:git:git@github.com:Alfresco/alfresco-jodconverter.git/jodconverter-core</connection>
+    <developerConnection>scm:git:git@github.com:Alfresco/alfresco-jodconverter.git/jodconverter-core/</developerConnection>
+    <url>https://github.com/Alfresco/alfresco-jodconverter</url>
+    <tag>HEAD</tag>
   </scm>
+
+  <distributionManagement>
+    <repository>
+       <id>alfresco-internal</id>
+       <url>https://artifacts.alfresco.com/nexus/content/repositories/releases</url>
+     </repository>
+     <snapshotRepository>
+        <id>alfresco-internal-snapshots</id>
+        <url>https://artifacts.alfresco.com/nexus/content/repositories/snapshots</url>
+     </snapshotRepository>
+  </distributionManagement>
+
   <inceptionYear>2003</inceptionYear>
   <developers>
     <developer>

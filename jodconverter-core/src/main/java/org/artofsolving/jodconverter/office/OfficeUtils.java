@@ -10,6 +10,9 @@
 // 2. The Apache License, Version 2.0
 //    -> http://www.apache.org/licenses/LICENSE-2.0.txt
 //
+// 2013 - Alfresco Software, Ltd.
+// Alfresco Software has modified source of this file
+// The details of changes can be found in the github repo: https://github.com/Alfresco/alfresco-jodconverter
 package org.artofsolving.jodconverter.office;
 
 import java.io.File;
@@ -102,7 +105,8 @@ public class OfficeUtils {
 
     public static File getOfficeExecutable(File officeHome) {
         if (PlatformUtils.isMac()) {
-            return new File(officeHome, "MacOS/soffice.bin");
+            File binFile = new File(officeHome, "MacOS/soffice.bin");
+            return binFile.isFile() ? binFile : new File(officeHome, "MacOS/soffice");
         } else {
             return new File(officeHome, "program/soffice.bin");
         }

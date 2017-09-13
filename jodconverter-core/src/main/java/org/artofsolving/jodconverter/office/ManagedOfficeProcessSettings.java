@@ -10,6 +10,9 @@
 // 2. The Apache License, Version 2.0
 //    -> http://www.apache.org/licenses/LICENSE-2.0.txt
 //
+// 2013 - Alfresco Software, Ltd.
+// Alfresco Software has modified source of this file
+// The details of changes can be found in the github repo: https://github.com/Alfresco/alfresco-jodconverter
 package org.artofsolving.jodconverter.office;
 
 import java.io.File;
@@ -29,6 +32,8 @@ class ManagedOfficeProcessSettings {
     private ProcessManager processManager = new PureJavaProcessManager();
     private long retryTimeout = DefaultOfficeManagerConfiguration.DEFAULT_RETRY_TIMEOUT;
     private long retryInterval = DEFAULT_RETRY_INTERVAL;
+    /** the timeout for connecting to an OO instance */
+    private long connectTimeout = DefaultOfficeManagerConfiguration.DEFAULT_CONNECT_TIMEOUT;
 
     public ManagedOfficeProcessSettings(UnoUrl unoUrl) {
         this.unoUrl = unoUrl;
@@ -94,4 +99,19 @@ class ManagedOfficeProcessSettings {
         this.retryInterval = retryInterval;
     }
 
+    /**
+     * Timeout to connect to a running OO instance.
+     * @return timeout
+     */
+    public long getConnectTimeout() {
+        return connectTimeout;
+    }
+
+    /**
+     * Set the timeout to connect to a running OO instance in milliseconds.
+     * @param connectTimeout
+     */
+    public void setConnectTimeout(long connectTimeout) {
+        this.connectTimeout = connectTimeout;
+    }
 }

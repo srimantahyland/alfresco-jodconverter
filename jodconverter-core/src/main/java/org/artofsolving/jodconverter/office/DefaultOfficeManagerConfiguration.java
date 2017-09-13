@@ -10,6 +10,9 @@
 // 2. The Apache License, Version 2.0
 //    -> http://www.apache.org/licenses/LICENSE-2.0.txt
 //
+// 2013 - Alfresco Software, Ltd.
+// Alfresco Software has modified source of this file
+// The details of changes can be found in the github repo: https://github.com/Alfresco/alfresco-jodconverter
 package org.artofsolving.jodconverter.office;
 
 import java.io.File;
@@ -23,6 +26,7 @@ import org.artofsolving.jodconverter.util.PlatformUtils;
 public class DefaultOfficeManagerConfiguration {
 
     public static final long DEFAULT_RETRY_TIMEOUT = 120000L;
+    public static final long DEFAULT_CONNECT_TIMEOUT = 10000L; // 10 seconds
 
     private File officeHome = OfficeUtils.getDefaultOfficeHome();
     private OfficeConnectionProtocol connectionProtocol = OfficeConnectionProtocol.SOCKET;
@@ -35,6 +39,7 @@ public class DefaultOfficeManagerConfiguration {
     private long taskExecutionTimeout = 120000L;  // 2 minutes
     private int maxTasksPerProcess = 200;
     private long retryTimeout = DEFAULT_RETRY_TIMEOUT;
+    private long connectTimeout = DEFAULT_CONNECT_TIMEOUT;
 
     private ProcessManager processManager = null;  // lazily initialised
 
@@ -152,6 +157,18 @@ public class DefaultOfficeManagerConfiguration {
         return this;
     }
 
+    /**
+     * Connect timeout set in milliseconds. Used for connect office process calls.
+     * If not set, it defaults to 10 seconds
+     *
+     * @param connectTimeout in milliseconds
+     * @return
+     */
+    public DefaultOfficeManagerConfiguration setConnectTimeout(long connectTimeout) {
+        this.connectTimeout = connectTimeout;
+        return this;
+    }
+
     public OfficeManager buildOfficeManager() throws IllegalStateException {
         if (officeHome == null) {
             throw new IllegalStateException("officeHome not set and could not be auto-detected");
@@ -176,7 +193,7 @@ public class DefaultOfficeManagerConfiguration {
         for (int i = 0; i < numInstances; i++) {
             unoUrls[i] = (connectionProtocol == OfficeConnectionProtocol.PIPE) ? UnoUrl.pipe(pipeNames[i]) : UnoUrl.socket(portNumbers[i]);
         }
-        return new ProcessPoolOfficeManager(officeHome, unoUrls, runAsArgs, templateProfileDir, workDir, retryTimeout, taskQueueTimeout, taskExecutionTimeout, maxTasksPerProcess, processManager);
+        return new ProcessPoolOfficeManager(officeHome, unoUrls, runAsArgs, templateProfileDir, workDir, retryTimeout, taskQueueTimeout, taskExecutionTimeout, connectTimeout, maxTasksPerProcess, processManager);
     }
 
     private ProcessManager findBestProcessManager() {

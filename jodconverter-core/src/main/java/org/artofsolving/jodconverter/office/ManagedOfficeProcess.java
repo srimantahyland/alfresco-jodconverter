@@ -10,12 +10,16 @@
 // 2. The Apache License, Version 2.0
 //    -> http://www.apache.org/licenses/LICENSE-2.0.txt
 //
+// 2013 - Alfresco Software, Ltd.
+// Alfresco Software has modified source of this file
+// The details of changes can be found in the github repo: https://github.com/Alfresco/alfresco-jodconverter
 package org.artofsolving.jodconverter.office;
 
 import java.net.ConnectException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -53,7 +57,7 @@ class ManagedOfficeProcess {
 			}
 		});
 		try {
-			future.get();
+			future.get(settings.getConnectTimeout(), TimeUnit.MILLISECONDS);
 		} catch (Exception exception) {
 			throw new OfficeException("failed to start and connect", exception);
 		}
@@ -66,10 +70,11 @@ class ManagedOfficeProcess {
 			}
 		});
 		try {
-			future.get();
+			future.get(settings.getConnectTimeout(), TimeUnit.MILLISECONDS);
 		} catch (Exception exception) {
 			throw new OfficeException("failed to start and connect", exception);
 		}
+		executor.shutdown();
 	}
 
 	public void restartAndWait() {
@@ -80,7 +85,7 @@ class ManagedOfficeProcess {
 			}
 		});
 		try {
-			future.get();
+			future.get(settings.getConnectTimeout(), TimeUnit.MILLISECONDS);
 		} catch (Exception exception) {
 			throw new OfficeException("failed to restart", exception);
 		}

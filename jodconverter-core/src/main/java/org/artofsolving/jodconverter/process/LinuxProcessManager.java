@@ -38,7 +38,7 @@ public class LinuxProcessManager implements ProcessManager {
 	}
 
     protected String[] psCommand() {
-        return new String[] { "/bin/ps", "-e", "-o", "pid,args" };
+        return new String[] { "/bin/ps", "-e", "-ww", "-o", "pid,args" };
     }
 
     public long findPid(ProcessQuery query) throws IOException {

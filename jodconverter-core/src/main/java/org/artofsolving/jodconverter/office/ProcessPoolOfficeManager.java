@@ -10,6 +10,9 @@
 // 2. The Apache License, Version 2.0
 //    -> http://www.apache.org/licenses/LICENSE-2.0.txt
 //
+// 2013 - Alfresco Software, Ltd.
+// Alfresco Software has modified source of this file
+// The details of changes can be found in the github repo: https://github.com/Alfresco/alfresco-jodconverter
 package org.artofsolving.jodconverter.office;
 
 import java.io.File;
@@ -31,9 +34,9 @@ class ProcessPoolOfficeManager implements OfficeManager {
     private final Logger logger = Logger.getLogger(ProcessPoolOfficeManager.class.getName());
 
     public ProcessPoolOfficeManager(File officeHome, UnoUrl[] unoUrls, String[] runAsArgs, File templateProfileDir, File workDir,
-            long retryTimeout, long taskQueueTimeout, long taskExecutionTimeout, int maxTasksPerProcess,
-            ProcessManager processManager) {
-		this.taskQueueTimeout = taskQueueTimeout;
+                                    long retryTimeout, long taskQueueTimeout, long taskExecutionTimeout, long connectTimeout, int maxTasksPerProcess,
+                                    ProcessManager processManager) {
+        this.taskQueueTimeout = taskQueueTimeout;
         pool = new ArrayBlockingQueue<PooledOfficeManager>(unoUrls.length);
         pooledManagers = new PooledOfficeManager[unoUrls.length];
         for (int i = 0; i < unoUrls.length; i++) {
@@ -44,6 +47,7 @@ class ProcessPoolOfficeManager implements OfficeManager {
             settings.setOfficeHome(officeHome);
             settings.setRetryTimeout(retryTimeout);
             settings.setTaskExecutionTimeout(taskExecutionTimeout);
+            settings.setConnectTimeout(connectTimeout);
             settings.setMaxTasksPerProcess(maxTasksPerProcess);
             settings.setProcessManager(processManager);
             pooledManagers[i] = new PooledOfficeManager(settings);
