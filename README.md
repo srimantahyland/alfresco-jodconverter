@@ -1,17 +1,38 @@
-# JODConverter
+### Alfresco JODConverter
 
-JODConverter (for Java OpenDocument Converter) automates document conversions
-using LibreOffice or OpenOffice.org.
+The Alfresco JODConverter (Java OpenDocument Converter) was forked from  https://github.com/mirkonasato/jodconverter which stopped
+being maintaining in 2012. It contains patched code used by the Alfresco content services repository. The repository uses the
+JODConverter to help automates document conversions using LibreOffice or OpenOffice.org.
 
-### Warning: This Repository is Unmaintained
+Prior to this github repository, a patched version of JODConverter (source and jar) were available in the Alfresco maven repository
+as com.artofsolving:jodconverter:2.1.0-alfresco-patched.
 
-I started this project back in 2003, and stopped maintaining it in 2012. I moved the code here at GitHub in the
-hope that a well-maintained fork will emerge.
+### Building and testing
+The project can be built by running Maven command:
+~~~
+mvn clean install -DskipTests
+~~~
+The tests require $officehome to be set to the location of LibreOffice or OpenOffice.org.
 
-So you may want to use one of the more recently updated [forks](https://github.com/mirkonasato/jodconverter/network)
-instead of this repository. Please don't bother submitting pull requests to this repository as they will simply be ignored.
+### Artifacts
+The artifacts can be obtained by:
+* downloading from [Alfresco repository](https://artifacts.alfresco.com/nexus/content/groups/public)
+* getting as Maven dependency by adding the dependency to your pom file:
+~~~
+<dependency>
+  <groupId>org.alfresco</groupId>
+  <artifactId>alfresco-repository</artifactId>
+  <version>version</version>
+</dependency>
+~~~
+and Alfresco Maven repository:
+~~~
+<repository>
+  <id>alfresco-maven-repo</id>
+  <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+</repository>
+~~~
+The SNAPSHOT version of the artifact is **never** published.
 
-The previous home for this project is at [Google Code](http://code.google.com/p/jodconverter/),
-including some [wiki pages](https://code.google.com/archive/p/jodconverter/wikis).
-
--- Mirko Nasato
+### Contributing guide
+Please use [this guide](CONTRIBUTING.md) to make a contribution to the project.
