@@ -15,10 +15,10 @@
   </description>
   
   <scm>
-    <connection>scm:git:git@github.com:Alfresco/alfresco-jodconverter.git/jodconverter-core</connection>
-    <developerConnection>scm:git:git@github.com:Alfresco/alfresco-jodconverter.git/jodconverter-core/</developerConnection>
+    <connection>scm:git:git@github.com:Alfresco/alfresco-jodconverter.git</connection>
+    <developerConnection>scm:git:git@github.com:Alfresco/alfresco-jodconverter.git</developerConnection>
     <url>https://github.com/Alfresco/alfresco-jodconverter</url>
-    <tag>HEAD</tag>
+    <tag>alfresco-jodconverter-core-3.0-alfresco-patched-20141024</tag>
   </scm>
 
   <distributionManagement>
