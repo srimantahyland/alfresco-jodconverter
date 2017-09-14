@@ -21,7 +21,7 @@ The artifacts can be obtained by:
 ~~~
 <dependency>
   <groupId>org.alfresco</groupId>
-  <artifactId>alfresco-repository</artifactId>
+  <artifactId>alfresco-jodconverter</artifactId>
   <version>version</version>
 </dependency>
 ~~~
