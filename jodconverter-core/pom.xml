@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.alfresco</groupId>
@@ -9,6 +7,12 @@
   <version>3.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
+  <parent>
+    <groupId>org.alfresco</groupId>
+    <artifactId>alfresco-super-pom</artifactId>
+    <version>8</version>
+  </parent>
+  
   <name>JODConverter - Core Library</name>
   <description>
     JODConverter converts office documents using OpenOffice.org
@@ -18,7 +22,7 @@
     <connection>scm:git:git@github.com:Alfresco/alfresco-jodconverter.git</connection>
     <developerConnection>scm:git:git@github.com:Alfresco/alfresco-jodconverter.git</developerConnection>
     <url>https://github.com/Alfresco/alfresco-jodconverter</url>
-    <tag>alfresco-jodconverter-core-3.0-alfresco-patched-20141024</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <distributionManagement>
