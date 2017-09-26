@@ -4,7 +4,7 @@
 
   <groupId>org.alfresco</groupId>
   <artifactId>alfresco-jodconverter-core</artifactId>
-  <version>1.2</version>
+  <version>1.3-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <parent>
@@ -22,7 +22,7 @@
     <connection>scm:git:git@github.com:Alfresco/alfresco-jodconverter.git</connection>
     <developerConnection>scm:git:git@github.com:Alfresco/alfresco-jodconverter.git</developerConnection>
     <url>https://github.com/Alfresco/alfresco-jodconverter</url>
-    <tag>alfresco-jodconverter-core-1.2</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <distributionManagement>
