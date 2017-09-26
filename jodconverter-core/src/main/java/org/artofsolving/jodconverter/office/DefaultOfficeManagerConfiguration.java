@@ -26,7 +26,7 @@ import org.artofsolving.jodconverter.util.PlatformUtils;
 public class DefaultOfficeManagerConfiguration {
 
     public static final long DEFAULT_RETRY_TIMEOUT = 120000L;
-    public static final long DEFAULT_CONNECT_TIMEOUT = 30000L; // 30 seconds
+    public static final long DEFAULT_CONNECT_TIMEOUT = 10000L; // 10 seconds
 
     private File officeHome = OfficeUtils.getDefaultOfficeHome();
     private OfficeConnectionProtocol connectionProtocol = OfficeConnectionProtocol.SOCKET;
