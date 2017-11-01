@@ -21,8 +21,8 @@ The artifacts can be obtained by:
 ~~~
 <dependency>
   <groupId>org.alfresco</groupId>
-  <artifactId>alfresco-jodconverter</artifactId>
-  <version>version</version>
+  <artifactId>alfresco-jodconverter-core</artifactId>
+  <version>3.0.1</version>
 </dependency>
 ~~~
 and Alfresco Maven repository:
@@ -33,6 +33,9 @@ and Alfresco Maven repository:
 </repository>
 ~~~
 The SNAPSHOT version of the artifact is **never** published.
+
+### Bamboo
+The build plan in Bamboo is [PLAT-JOD](https://bamboo.alfresco.com/bamboo/browse/PLAT-JOD/latest)
 
 ### Contributing guide
 Please use [this guide](CONTRIBUTING.md) to make a contribution to the project.
