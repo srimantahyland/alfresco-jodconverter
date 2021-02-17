@@ -25,7 +25,7 @@ branches:
 stages:
   - name: test
   - name: release
-    if: fork = false AND (branch = master OR branch =~ /release\/.*/) AND type != pull_request AND commit_message !~ /\[no release\]/
+    if: branch = master AND type != pull_request AND commit_message !~ /\[no release\]/
 
 before_install: travis_retry bash scripts/travis/init.sh
 
