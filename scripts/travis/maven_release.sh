@@ -12,8 +12,7 @@ git config user.email "${GIT_EMAIL}"
 # Run the release plugin - with "[skip ci]" in the release commit message
 pushd jodconverter-core
 mvn -B \
-  "-Darguments=-DskipTests" \
-  -Dmaven.javadoc.skip \
+  "-Darguments=-DskipTests -Dmaven.javadoc.skip -Dadditionalparam=-Xdoclint:none" \
   release:clean release:prepare release:perform \
   -DscmCommentPrefix="[maven-release-plugin][skip ci] " \
   -Dusername="${GIT_USERNAME}" \
