@@ -15,8 +15,8 @@ mvn -B \
   "-Darguments=-DskipTests" \
   release:clean release:prepare release:perform \
   -DscmCommentPrefix="[maven-release-plugin][skip ci] " \
-  -Dusername="${MAVEN_USERNAME}" \
-  -Dpassword="${MAVEN_PASSWORD}"
+  -Dusername="${GIT_USERNAME}" \
+  -Dpassword="${GIT_PASSWORD}"
 popd
 
 popd
