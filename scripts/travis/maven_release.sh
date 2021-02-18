@@ -13,7 +13,8 @@ git config user.email "${GIT_EMAIL}"
 pushd jodconverter-core
 mvn -B \
   "-Darguments=-DskipTests" \
-  release:prepare release:perform \
+  -Dmaven.javadoc.skip \
+  release:clean release:prepare release:perform \
   -DscmCommentPrefix="[maven-release-plugin][skip ci] " \
   -Dusername="${GIT_USERNAME}" \
   -Dpassword="${GIT_PASSWORD}"
