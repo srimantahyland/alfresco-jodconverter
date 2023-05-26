@@ -61,6 +61,12 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <java.version>17</java.version>
+    <maven.build.sourceVersion>${java.version}</maven.build.sourceVersion>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <maven.compiler.release>${java.version}</maven.compiler.release>
   </properties>
 
   <repositories>
@@ -147,8 +153,6 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>2.3.2</version>
           <configuration>
-            <source>11</source>
-            <target>11</target>
             <encoding>UTF-8</encoding>
           </configuration>
         </plugin>
