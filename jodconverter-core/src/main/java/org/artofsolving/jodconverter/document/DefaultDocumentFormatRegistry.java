@@ -125,7 +125,7 @@ public class DefaultDocumentFormatRegistry extends SimpleDocumentFormatRegistry 
         tsv.setStoreProperties(DocumentFamily.SPREADSHEET, tsvLoadAndStoreProperties);
         addFormat(tsv);
 
-        DocumentFormat ots = new DocumentFormat(" OpenDocument Spreadsheet Template", "ots", "application/vnd.oasis.opendocument.spreadsheet-template");
+        DocumentFormat ots = new DocumentFormat("OpenDocument Spreadsheet Template", "ots", "application/vnd.oasis.opendocument.spreadsheet-template");
         ots.setInputFamily(DocumentFamily.SPREADSHEET);
         ots.setStoreProperties(DocumentFamily.SPREADSHEET, Collections.singletonMap("FilterName", "calc8_template"));
         addFormat(ots);
